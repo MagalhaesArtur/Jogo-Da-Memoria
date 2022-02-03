@@ -1,0 +1,121 @@
+* {
+  font-family: GigaSansBlack;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+@font-face {
+  font-family: GigaSansBlack;
+  src: url(./fonts/giga-sans-black.otf);
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.card {
+  width: 120px;
+  position: relative;
+  height: 120px;
+
+  transform-style: preserve-3d;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.back_card,
+.front_card {
+  position: absolute;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+  backface-visibility: hidden;
+}
+.front_card {
+  transform: rotateY(180deg);
+  background: linear-gradient(to right, #252333, #b84141);
+}
+.back_card {
+  background-color: #ca2828;
+}
+
+.gameOver {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.822);
+  color: #eee;
+  font-size: 50px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+
+.restart {
+  margin-top: 30px;
+  color: #111;
+  padding: 20px;
+  background-color: #d40a0a;
+  border: none;
+  border-radius: 10px;
+  border: 3px solid #111;
+  transition-property: color, border, background;
+  transition-delay: 100ms;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.restart:hover {
+  cursor: pointer;
+  color: #eee;
+  border: #eee 3px solid;
+  background-color: #e60909;
+}
+
+.titleGameOver {
+  position: relative;
+  white-space: nowrap;
+  border-right: 2px solid #d40a0a;
+  overflow: hidden;
+}
+.efeito-digitação {
+  animation: maquinaDeEscrever 4s steps(40) 1s normal both,
+    cursorDeTexto 500ms steps(40) infinite normal;
+}
+
+@keyframes maquinaDeEscrever {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;
+  }
+}
+@keyframes cursorDeTexto {
+  from {
+    border-right-color: #d40a0a;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.tabuleiro {
+  max-width: 700px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
