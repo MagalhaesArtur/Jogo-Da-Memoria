@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(to right, #252333, #715474);
 }
 @font-face {
   font-family: GigaSansBlack;
@@ -22,9 +23,9 @@ body {
 }
 
 .card {
-  width: 120px;
+  width: 117px;
   position: relative;
-  height: 120px;
+  height: 117px;
 
   transform-style: preserve-3d;
   transition-property: transform;
@@ -33,6 +34,7 @@ body {
 }
 .back_card,
 .front_card {
+  border: #111 solid 3px;
   position: absolute;
   border-radius: 20px;
   width: 100%;
@@ -42,20 +44,32 @@ body {
   align-items: center;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
   backface-visibility: hidden;
+  transition-property: border, color, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 400ms;
 }
 .front_card {
   transform: rotateY(180deg);
   background: linear-gradient(to right, #252333, #b84141);
 }
+.front_card:hover {
+  border: #eee 3px solid;
+}
 .back_card {
   background-color: #ca2828;
+}
+.back_card:hover {
+  background-color: #e60909;
+  color: #eee;
+  border: #eee 3px solid;
+  cursor: pointer;
 }
 
 .gameOver {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.822);
+  background-color: rgba(0, 0, 0, 0.904);
   color: #eee;
   font-size: 50px;
   display: none;
