@@ -2,9 +2,9 @@ let front_card = "front_card";
 let back_card = "back_card";
 const CARD = "card";
 const icon = "icon";
-let restartBtn = document.querySelector(".restart");
 let startBtn = document.querySelector(".start");
-// startBtn.addEventListener("click", start);
+let restartBtn = document.querySelector(".restart");
+startBtn.addEventListener("click", start);
 restartBtn.addEventListener("click", restart);
 function restart() {
   document.location.reload();
@@ -71,6 +71,25 @@ function flipCard() {
           game.unflipCards();
         }, 1000);
       }
+    }
+  }
+}
+let startScreen = document.querySelector(".startScreen");
+startScreen.style.display = "flex";
+function start() {
+  startScreen.style.display = "none";
+  var cards = document.querySelectorAll(".card");
+  for (var card of cards) {
+    card.className = "card flip";
+  }
+  setTimeout(function () {
+    setNormal();
+  }, 2000);
+
+  function setNormal() {
+    var cards = document.querySelectorAll(".card");
+    for (var card of cards) {
+      card.className = "card";
     }
   }
 }

@@ -78,11 +78,37 @@ body {
   align-items: center;
   top: 0;
 }
+.startScreen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.904);
+  color: #eee;
+  font-size: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+.titleStartScreen {
+  width: 90%;
+  white-space: nowrap;
+  border-right: 2px solid #d40a0a;
+  overflow: hidden;
+  font-size: 2rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+}
 
 .restart {
   margin-top: 30px;
   color: #111;
-  padding: 20px;
+  padding: 30px;
+  font-size: 20px;
   background-color: #d40a0a;
   border: none;
   border-radius: 10px;
@@ -96,17 +122,21 @@ body {
   cursor: pointer;
   color: #eee;
   border: #eee 3px solid;
-  background-color: #e60909;
+  background-color: #111;
 }
 
 .titleGameOver {
   position: relative;
   white-space: nowrap;
-  border-right: 2px solid #d40a0a;
+  border-right: 2px solid #eee;
   overflow: hidden;
 }
 .efeito-digitação {
   animation: maquinaDeEscrever 4s steps(40) 1s normal both,
+    cursorDeTexto 500ms steps(40) infinite normal;
+}
+.efeito-digitação1 {
+  animation: maquinaDeEscrever1 4s steps(40) 1s normal both,
     cursorDeTexto 500ms steps(40) infinite normal;
 }
 
@@ -118,9 +148,17 @@ body {
     width: 24em;
   }
 }
+@keyframes maquinaDeEscrever1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40em;
+  }
+}
 @keyframes cursorDeTexto {
   from {
-    border-right-color: #d40a0a;
+    border-right-color: #eee;
   }
   to {
     border-right-color: transparent;
@@ -132,4 +170,28 @@ body {
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
   gap: 20px;
+}
+
+.start {
+  margin-top: 30px;
+  color: #111;
+  padding: 20px;
+  background-color: #d40a0a;
+  border: none;
+  border-radius: 10px;
+  border: 3px solid #111;
+  font-size: 20px;
+  transition-property: color, border, background;
+  transition-delay: 100ms;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.start:hover {
+  cursor: pointer;
+  color: #eee;
+  border: #eee 3px solid;
+  background-color: #111;
+}
+.containerGameOver {
+  width: 90%;
 }

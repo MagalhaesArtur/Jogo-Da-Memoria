@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jogo da Memória</title>
+    <link rel="icon" href="./imgs/images/brain.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="./mobile.css"
+      media="screen and (max-width: 1275px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./mobile1.css"
+      media="screen and (max-width: 850px)"
+    />
   </head>
   <body>
     <div class="tabuleiro">
@@ -23,6 +34,15 @@
       </div>
       <button class="restart">Jogue de novo</button>
     </div>
+
+    <div class="startScreen">
+      <div class="titleStartScreen efeito-digitação1">
+        Olá jogador! Você terá dois segundos para ver o posicionamento das
+        cartas.
+      </div>
+      <button class="start">VAMOS LÁ!</button>
+    </div>
+
     <script src="./scripts/jogo.js"></script>
     <script src="./scripts/script.js"></script>
   </body>
