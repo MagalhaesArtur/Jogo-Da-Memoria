@@ -166,10 +166,12 @@ body {
 }
 
 .tabuleiro {
-  max-width: 700px;
+  max-width: 600px;
+  height: 600px;
   display: grid;
-  grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(10px, 1fr));
+  grid-template-rows: repeat(5, minmax(100px, 1fr));
+  gap: 30px;
 }
 
 .start {
