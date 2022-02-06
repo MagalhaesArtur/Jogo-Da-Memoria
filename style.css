@@ -171,7 +171,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(10px, 1fr));
   grid-template-rows: repeat(5, minmax(100px, 1fr));
-  gap: 30px;
+  column-gap: 30px;
+  row-gap: 30px;
 }
 
 .start {
